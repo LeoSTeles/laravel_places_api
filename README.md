@@ -67,7 +67,7 @@ docker-compose exec app php artisan migrate
 http://localhost:8000/api/test
 ```
 
-5. Parar o ambiente quando desejado
+5. Parar o ambiente quando finalizar a execução
 
 ```bash
 docker-compose down
@@ -87,27 +87,26 @@ docker-compose up -d
 docker-compose exec app php artisan test
 ```
     Este comando irá rodar todos os testes localizados em tests/Feature/PlaceApiTest.php, incluindo os seguintes cenários:
-      Listar todos os lugares
-
-      Filtrar lugares por nome
-
-      Buscar um lugar específico
-
-      Criar um novo lugar
-
-      Impedir criação sem campos obrigatórios
-
-      Atualizar um lugar existente
-
-      Deletar um lugar existente
-
-    Se tudo estiver funcionando corretamente, todos os testes devem passar com sucesso ✅.
+      - Listar todos os lugares
+      - Filtrar lugares por nome
+      - Buscar um lugar específico
+      - Criar um novo lugar
+      - Impedir criação sem campos obrigatórios
+      - Atualizar um lugar existente
+      - Deletar um lugar existente
+    Se tudo estiver funcionando corretamente, todos os testes serão executados sem erros.
 
 ## Observações
 
 Certifique-se de que as portas 8000 (nginx) e 5432 (PostgreSQL) estejam livres na sua máquina.
-Para qualquer alteração nas dependências, reconstrua a imagem do container com:  docker-compose up -d --build.
-Caso queira acessar o container do app para rodar comandos artisan manualmente: docker-compose exec app bash
+Para qualquer alteração nas dependências, reconstrua a imagem do container com:  
+```bash 
+docker-compose up -d --build
+```
+Caso queira acessar o container do app para rodar comandos manualmente: 
+```bash
+docker-compose exec app bash
+```
 
 ## Endpoints existentes na API
 
