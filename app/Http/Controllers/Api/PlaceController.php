@@ -76,6 +76,6 @@ class PlaceController extends Controller
 
         $place->delete();
 
-        return response()->json(['message' => 'Place deleted'], 200);
+        return response()->noContent();
     }
 }
