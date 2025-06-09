@@ -8,7 +8,6 @@ Route::middleware('api')->group(function () {
         return response()->json(['message' => 'API is working!']);
     });
 
-    // Aqui suas outras rotas da API
     Route::apiResource('places', PlaceController::class);
 });
 
