@@ -73,6 +73,36 @@ http://localhost:8000/api/test
 docker-compose down
 ```
 
+## Testes automatizados
+
+1. Conferir se os containers estão rodando
+
+```bash
+docker-compose up -d
+```
+
+2. Executar todos os testes automatizados com PHPUnit
+
+```bash
+docker-compose exec app php artisan test
+```
+    Este comando irá rodar todos os testes localizados em tests/Feature/PlaceApiTest.php, incluindo os seguintes cenários:
+      Listar todos os lugares
+
+      Filtrar lugares por nome
+
+      Buscar um lugar específico
+
+      Criar um novo lugar
+
+      Impedir criação sem campos obrigatórios
+
+      Atualizar um lugar existente
+
+      Deletar um lugar existente
+
+    Se tudo estiver funcionando corretamente, todos os testes devem passar com sucesso ✅.
+
 ## Observações
 
 Certifique-se de que as portas 8000 (nginx) e 5432 (PostgreSQL) estejam livres na sua máquina.
