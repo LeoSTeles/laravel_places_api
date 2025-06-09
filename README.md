@@ -23,12 +23,19 @@ API simples para gerenciar lugares (CRUD) utilizando Laravel 12 e PostgreSQL, co
 ## Configuração do ambiente
 
 1. Clonar o repositório
-
-git clone https://github.com/LeoSTeles/laravel_places_api e depois entre na pasta do projeto com o comando cd laravel_places_api
+```bash
+git clone https://github.com/LeoSTeles/laravel_places_api 
+```
+e depois entre na pasta do projeto com o comando 
+```bash 
+cd laravel_places_api
+```
 
 2. Copiar o arquivo de ambiente exemplo
 
+```bash
 cp .env.example .env
+```
 
 3. Conferir as variáveis de ambiente (caso exista algum conflito de portas, por exemplo)
 
@@ -38,23 +45,33 @@ cp .env.example .env
 
 1. Subir containers com o docker
 
+```bash
 docker-compose up -d --build
+```
 
 2. Receber dependências do Laravel
 
+```bash
 docker-compose exec app composer install
+```
 
 3. Rodar o comando de migrations no docker
 
+```bash
 docker-compose exec app php artisan migrate
+```
 
 4. Acessar link de teste da API para conferir se está funcionando
 
+```bash
 http://localhost:8000/api/test
+```
 
 5. Parar o ambiente quando desejado
 
+```bash
 docker-compose down
+```
 
 ## Observações
 
@@ -78,27 +95,28 @@ Caso queira acessar o container do app para rodar comandos artisan manualmente: 
 
 1. Criar um Lugar (POST /api/places)
 
+``` bash
 {
   "name": "Beach Park",
   "slug": "beach-park",
   "city": "Fortaleza",
   "state": "CE"
 }
-
+```
 Headers obrigatórios (A API não irá executar o comando se os headers não existirem)
 
 Accept: application/json
 Content-Type: application/json
 
 2. Atualizar um lugar (PUT /api/places/{id})
-
+``` bash
 {
   "name": "Beach Park Updated",
   "slug": "beach-park-updated",
   "city": "Fortaleza",
   "state": "CE"
 }
-
+```
 3. Listar lugares (GET /api/places)
 
 Sem filtros: retorna todos os lugares
