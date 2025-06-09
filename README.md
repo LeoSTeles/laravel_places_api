@@ -120,12 +120,15 @@ Content-Type: application/json
 3. Listar lugares (GET /api/places)
 
 Sem filtros: retorna todos os lugares
+
 Com filtro: /api/places?name=park retorna lugares que contém "park" no nome
 
 4. Obter lugar específico (GET /api/places/{id})
+
 Retorna o lugar com o ID informado.
 
 5. Deletar um lugar (DELETE /api/places/{id})
+
 Deleta o lugar pelo ID.
 
 
