@@ -24,8 +24,7 @@ API simples para gerenciar lugares (CRUD) utilizando Laravel 12 e PostgreSQL, co
 
 1. Clonar o repositório
 
-git clone https://github.com/LeoSTeles/laravel_places_api
-cd laravel_places_api
+git clone https://github.com/LeoSTeles/laravel_places_api e depois entre na pasta do projeto com o comando cd laravel_places_api
 
 2. Copiar o arquivo de ambiente exemplo
 
@@ -34,21 +33,26 @@ cp .env.example .env
 3. Conferir as variáveis de ambiente (caso exista algum conflito de portas, por exemplo)
 
 
+
 ## Rodando o projeto
 
 1. Subir containers com o docker
 
 docker-compose up -d --build
 
-2. Rodar o comando de migrations no docker
+2. Receber dependências do Laravel
+
+docker-compose exec app composer install
+
+3. Rodar o comando de migrations no docker
 
 docker-compose exec app php artisan migrate
 
-3. Acessar link de teste da API para conferir se está funcionando
+4. Acessar link de teste da API para conferir se está funcionando
 
 http://localhost:8000/api/test
 
-4. Parar o ambiente quando desejado
+5. Parar o ambiente quando desejado
 
 docker-compose down
 
