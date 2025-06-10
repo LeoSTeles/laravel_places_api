@@ -9,7 +9,6 @@ class Place extends Model
 {
     use HasFactory;
 
-    // Campos permitidos para criação/edição em massa
     protected $fillable = [
         'name',
         'slug',
